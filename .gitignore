@@ -1,0 +1,35 @@
+# --- Archivos del Sistema Operativo ---
+.DS_Store
+Thumbs.db
+.directory
+
+# --- Python (Si usan scripts o ROS) ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.venv/
+venv/
+ENV/
+
+# --- Compilación de C/C++ y Arduino ---
+*.spec
+*.out
+*.exe
+*.o
+*.a
+*.la
+*.lo
+build/
+bin/
+*.elf
+*.hex
+
+# --- Archivos de entornos virtuales y configuraciones locales ---
+.vscode/
+.idea/
+*.log
+.env
+
+
