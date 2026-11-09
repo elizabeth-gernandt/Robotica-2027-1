@@ -6,20 +6,20 @@
       <geometry>
         <mesh filename="../meshes/Base.STL"/>
       </geometry>
-        <material name="rosa">
-            <color rgba="236.0 199.0 201.0 1.0"/>
+        <material name="rosaca">
+            <color rgba="1.0 0.92 0.94 1.0"/>
         </material>
     </visual>
   </link>
 
   <link name ="shoulder">
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="1.571 0 0"/>
       <geometry>
         <mesh filename="../meshes/Shoulder_Rotation_Pitch.STL"/>
       </geometry>
-        <material name="rosa">
-            <color rgba="296.0 199.0 201.0 1.0"/>
+        <material name="rosaclaro">
+            <color rgba="1.0 0.71 0.75 1.0"/>
         </material>
     </visual>
   </link>
@@ -30,20 +30,20 @@
       <geometry>
         <mesh filename="../meshes/Upper_Arm.STL"/>
       </geometry>
-        <material name="rosa">
-            <color rgba="248.0 221.0 224.0 1.0"/>
+        <material name="rosafuerte">
+            <color rgba="1.0 0.41 0.71 1.0"/>
         </material>
     </visual>
   </link>
 
   <link name ="lower_arm">
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="1.571 0 0"/>
       <geometry>
         <mesh filename="../meshes/Lower_Arm.STL"/>
       </geometry>
-        <material name="rosa">
-            <color rgba="248.0 235.0 239.0 1.0"/>
+        <material name="rosaotro">
+            <color rgba="1.0 0.92 0.94 1.0"/>
         </material>
     </visual>
   </link>
@@ -52,34 +52,34 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/Wrist_Pitch_Roll.stl"/>
+        <mesh filename="../meshes/Wrist_Pitch_Roll.STL"/>
       </geometry>
-        <material name="rosa">
-            <color rgba="248.0 221.0 224.0 1.0"/>
+        <material name="rosaclaro">
+            <color rgba="1.0 0.71 0.75 1.0"/>
         </material>
     </visual>
   </link>
 
 <link name ="fixed_gripper">
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 4.7124 0"/>
       <geometry>
         <mesh filename="../meshes/Fixed_Gripper.STL"/>
       </geometry>
         <material name="rosa">
-            <color rgba="252.0 219.0 230.0 1.0"/>
+            <color rgba="1.0 0.41 0.71 1.0"/>
         </material>
     </visual>
   </link>
 
 <link name ="moving_jaw">
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 1.571 0"/>
       <geometry>
         <mesh filename="../meshes/Moving_Jaw.STL"/>
       </geometry>
         <material name="rosa">
-            <color rgba="248.0 233.0 237.0 1.0"/>
+            <color rgba="1.0 0.41 0.71 1.0"/>
         </material>
     </visual>
   </link>
@@ -91,7 +91,7 @@
     <child link="shoulder"/>
     <origin xyz="0 -0.045 0.016" rpy="0 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit lower="-1.0" upper="1.0" effort="10" velocity="1.0"/>
+    <limit lower="-1.5708" upper="1.5708" effort="10" velocity="1.0"/>
 </joint>
 
 <joint name="joint_2" type="revolute">
@@ -99,7 +99,7 @@
     <child link="upper_arm"/>
     <origin xyz="0 -0.0303 0.1203" rpy="0 0 0"/>
     <axis xyz="1 0 0"/>
-    <limit lower="-1.0" upper="1.0" effort="10" velocity="1.0"/>
+    <limit lower="-0.349" upper="1.2217" effort="10" velocity="1.0"/>
 </joint>
 
 <joint name="joint_3" type="revolute">
@@ -107,7 +107,7 @@
     <child link="lower_arm"/>
     <origin xyz="0 0.1126 0.0277" rpy="0 0 0"/>
     <axis xyz="1 0 0"/>
-    <limit lower="-1.0" upper="1.0" effort="10" velocity="1.0"/>
+    <limit lower="-3.14159" upper="0" effort="10" velocity="1.0"/>
 </joint>
 
 <joint name="joint_4" type="revolute">
@@ -115,23 +115,23 @@
     <child link="wrist"/>
     <origin xyz="0 -0.135 0.0053" rpy="0 0 0"/>
     <axis xyz="1 0 0"/>
-    <limit lower="-1.0" upper="1.0" effort="10" velocity="1.0"/>
+    <limit lower="-1.9198" upper="1.13446" effort="10" velocity="1.0"/>
 </joint>
 
 <joint name="joint_5" type="revolute">
     <parent link="wrist"/>
     <child link="fixed_gripper"/>
-    <origin xyz="0 -0.-0.062 0.0" rpy="0 0 0"/>
+    <origin xyz="0 -0.062 0.0" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
-    <limit lower="-1.0" upper="1.0" effort="10" velocity="1.0"/>
+    <limit lower="-3.14159" upper="3.14159" effort="10" velocity="1.0"/>
 </joint>
 
 <joint name="joint_6" type="revolute">
     <parent link="fixed_gripper"/>
     <child link="moving_jaw"/>
-    <origin xyz="0 -0.-0.0245 -0.2" rpy="0 0 0"/>
-    <axis xyz="0 0 1"/>
-    <limit lower="-1.0" upper="1.0" effort="10" velocity="1.0"/>
+    <origin xyz="0 -0.0245 -0.02" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.1745" upper="1.5708" effort="10" velocity="1.0"/>
 </joint>
 
 
